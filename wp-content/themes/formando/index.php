@@ -64,20 +64,34 @@
                 </g>
             </svg>
         </div>
-        <p>
-            Gracias a este curso pude realizarme como profesional aumentar mis ingresos y poder tener la calidad de
-            vida que siempre soñe para mi y toda mi familia gracias. Gracias a este curso pude realizarme como
-            profesional aumentar mis ingresos.
+        <ul id="slides">
+            <?php
+            $my_query = new WP_Query('category_name=testimonios&showposts=10');
+            $images = [];
+            $j = true;
 
-        </p>
-        <em class="row end">
-            <span>Juan Ramos, <b>Ing Sistemas</b></span>
-        </em>
-        <ul class="row around">
-            <li><img src="<?php bloginfo('template_url') ?>/assets/img/t1.png" alt=""></li>
-            <li><img src="<?php bloginfo('template_url') ?>/assets/img/t2.png" alt=""></li>
-            <li><img src="<?php bloginfo('template_url') ?>/assets/img/t3.png" alt=""></li>
-            <li><img src="<?php bloginfo('template_url') ?>/assets/img/t4.png" alt=""></li>
+            ?>
+            <?php
+            while ($my_query->have_posts()) :
+                $my_query->the_post();
+                $images[] = get_the_post_thumbnail_url();
+            ?>
+
+                <li class="slide <?php if($j){echo 'showing'; $j = false;} ?>">
+                    <?php the_content() ?>
+                    <em class="row end"><span><?php the_title() ?>,
+                            <b><?php print_r(get_post_meta(get_the_ID(), 'profesion', true)); ?></b></span></em>
+                </li>
+            <?php endwhile;
+            wp_reset_postdata(); ?>
+
+
+        </ul>
+
+        <ul class="row around" id="items">
+            <?php for ($i = 0; $i < count($images); $i++) :?>
+            <li data-current="<?php echo $i ?>"><img src="<?php echo $images[$i] ?>" alt=""></li>
+            <?php endfor; ?>
         </ul>
     </div>
 </section>
@@ -96,7 +110,27 @@
 <button class="Button-fixed">QUÍERO QUE ME CONTACTEN</button>
 <?php print_r() ?>
 <script>
+    var slides = document.querySelectorAll('#slides .slide');
+    var currentSlide = 0;
+    var lis = document.querySelectorAll('#items li');
 
+    function slider(el) {
+        this.DOM = {}
+        this.DOM.el = el
+        this.initEvents();
+    }
+    slider.prototype.initEvents = function () {
+        this.DOM.el.addEventListener('click', this.clickFn.bind(this), false);
+    }
+    slider.prototype.clickFn = function () {
+        current = this.DOM.el.getAttribute('data-current')
+        slides[currentSlide].className = 'slide';
+        currentSlide = current;
+        slides[current].className = 'slide showing';
+    };
+    [].map.call(lis, function (el) {
+        new slider(el)
+    });
 
     var last_known_scroll_position = 0;
     var ticking = false;
