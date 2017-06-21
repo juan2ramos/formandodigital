@@ -112,7 +112,7 @@
             <button>$300.000</button>
             <h2>Adémas te incluimos en el curso</h2>
             <div class="row center">
-                <ul class="col-8">
+                <ul class="col-8 small-16   ">
                     <li class="row middle">
                         <img class="small-3" src="<?php bloginfo('template_url') ?>/assets/img/learn.png" alt="">
                         <p class="small-13">Ingreso a nuestra plataforma E-learning</p>
@@ -126,7 +126,7 @@
                         <p class="small-13">Seminario presencial</p>
                     </li>
                 </ul>
-                <ul class="col-8 ">
+                <ul class="col-8 small-16">
                     <li class="row middle">
                         <img class="small-3" src="<?php bloginfo('template_url') ?>/assets/img/learn.png" alt="">
                         <p class="small-13">Ingreso a nuestra plataforma E-learning</p>
@@ -153,10 +153,11 @@
         const Bf = document.querySelector('.Button-fixed'),
             Directed = document.querySelector('.Directed'),
             Button = document.querySelector('.Button-fixed')
+            Form = document.querySelector('form')
         ;
         console.log(Directed.offsetTop)
         Button.addEventListener('click',function () {
-            zenscroll.toY(0)
+            zenscroll.toY(Form.offsetTop)
         })
 
         function doSomething(scroll_pos) {

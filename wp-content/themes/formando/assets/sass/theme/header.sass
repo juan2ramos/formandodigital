@@ -110,9 +110,8 @@ section.container
     max-width: rem(57)
     margin: auto
   p
-    color: #A2A2A2
+    color: #585858
     line-height: rem(25)
-    font-weight: 300
     font-size: rem(15)
   article
     margin: rem(20) 0
@@ -176,9 +175,18 @@ section.container.Why
     text-align: justify
   em
     max-width: rem(900)
-    margin: rem(12) auto 3.5rem
+    margin: rem(12) auto 1rem
     text-transform: uppercase
     font-weight: 300
+    -webkit-box-pack: initial
+    justify-content: center
+    text-align: center
+    @include respond-to(medium)
+      margin: rem(12) auto 3.5rem
+      -webkit-box-pack: end
+      justify-content: flex-end
+      text-align: right
+
     br
       font-weight: bold
   ul
@@ -187,7 +195,18 @@ section.container.Why
   img
     border-radius: 50%
     box-shadow: 0 rem(10) rem(20) rem(5) rgba(0,0,0,0.20)
-
+  li
+    width: 50%
+    @include respond-to(medium)
+      width: inherit
+    img
+      max-width: rem(70)
+      margin: rem(12) auto
+      display: block
+      @include respond-to(medium)
+        max-width: inherit
+        margin: inherit
+        display: inherit
 .Register
   .container
     border: rem(3) solid #0A4C7D
