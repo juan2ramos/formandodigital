@@ -1,4 +1,22 @@
-<!DOCTYPE html>
+
+<?php
+
+$send = false;
+if ($_POST['_token'] == '$KJMM99osods$=)/') {
+    $send = true;
+    $to = 'juan2ramos@gmail.com';
+    $subject = 'Formulario Formando Digital';
+    $message = '<h1> Mensaje enviado de Formando Digital   </h1> <br>';
+    $message .= '<p>Nombre : ' . $_POST['name'] . '</p>';
+    $message .= '<p>Email:' . $_POST['email'] . '</p>';
+    $message .= '<p>Celular:' . $_POST['phone'] . '</p>';
+    $headers = array('From: Formando <info@formandodigital.com>;',);
+    wp_mail($to, $subject, $message,$headers);
+}
+
+
+
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
@@ -76,16 +94,21 @@
             </div>
         </article>
         <div class="col-7 row center" style="text-align: left">
-            <form action="">
+            <?php if(!$send){ ?>
+            <form action="" method="post" >
+                <input type="hidden" name="_token" value="$KJMM99osods$=)/">
                 <h2>Regístrate y recibe más información</h2>
                 <label for="">Nombre completo</label>
-                <input type="text">
+                <input type="text" required name="name">
                 <label for="">Email</label>
-                <input type="text">
-                <label for="">Celular</label>
-                <input type="text">
+                <input type="email" required name="email">
+                <label for="" >Celular</label>
+                <input type="text" name="phone">
                 <button type="submit">QUÍERO QUE ME CONTACTEN</button>
             </form>
+            <?php }else{?>
+                <h2>!Mensaje enviado!</h2>
+            <?php } ?>
         </div>
     </section>
 </header>

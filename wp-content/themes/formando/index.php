@@ -7,9 +7,9 @@
         <?php $my_query = new WP_Query('category_name=dirigido &showposts=10'); ?>
         <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
             <article class="col-5 medium-8 small-16">
-            <figure><?php echo the_post_thumbnail(); ?></figure>
-            <h3><?php the_title() ?></h3>
-            <p><?php the_content() ?></p>
+                <figure><?php echo the_post_thumbnail(); ?></figure>
+                <h3><?php the_title() ?></h3>
+                <p><?php the_content() ?></p>
             </article>
         <?php endwhile;
         wp_reset_postdata(); ?>
@@ -24,7 +24,7 @@
             <?php $my_query = new WP_Query('category_name=aprenderas &showposts=10'); ?>
             <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
                 <article class="col-4 medium-5 small-16">
-                    <figure><img src="<?php echo get_the_post_thumbnail_url()?>" alt=""></figure>
+                    <figure><img src="<?php echo get_the_post_thumbnail_url() ?>" alt=""></figure>
                     <h3><?php the_title() ?></h3>
                     <p><?php the_content() ?></p>
                 </article>
@@ -94,7 +94,7 @@
     </div>
 </section>
 <button class="Button-fixed">QUÍERO QUE ME CONTACTEN</button>
-
+<?php print_r() ?>
 <script>
 
 
