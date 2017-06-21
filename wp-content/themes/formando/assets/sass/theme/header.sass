@@ -1,0 +1,242 @@
+body
+  font-family: 'Roboto', sans-serif
+
+.container
+  max-width: rem(1200)
+  margin: auto
+
+.Header
+  background: url('../img/header-back.png') center bottom no-repeat, linear-gradient(-180deg, #1F7BBA 0%, #0B487B 100%)
+  overflow: hidden
+  h1
+    font-size: rem(32)
+    color: #FFFFFF
+    font-weight: 400
+    margin: rem(10) 0
+    text-align: center
+
+.Header-bar
+  background: #0A4C7D
+  color: white
+  max-height: rem(64)
+  a
+    color: white
+    font-weight: 500
+    font-size: rem(19)
+  p
+    font-family: Roboto-Regular
+    font-size: rem(14)
+    color: #3596D1
+    margin: 0
+
+.Header-partner
+  margin: 0
+  display: none
+  @include respond-to(medium)
+    display: block
+.Header-video
+  padding: rem(20)
+  @include respond-to(medium)
+    padding: 0
+iframe
+  max-width: 100vw
+.Header-containerNumber
+  padding: rem(11)
+
+.Header-Container
+  padding-top: rem(60)
+  form
+    background: #2791E2
+    box-shadow: 0 rem(10) rem(12) rem(4) rgba(0, 0, 0, 0.11)
+    border-radius: rem(9) rem(9) 0 0
+    max-width: rem(340)
+    padding: rem(40)
+    color: white
+  h2
+    font-size: rem(22)
+    color: #FFFFFF
+    font-weight: 300
+    text-align: center
+    margin-bottom: rem(32)
+  input
+    display: block
+    width: 100%
+    margin-bottom: rem(28)
+    height: rem(38)
+  label
+    font-size: rem(20)
+    text-shadow: 0 rem(1) rem(2) rgba(0, 0, 0, 0.50)
+    margin-bottom: rem(6)
+    display: block
+  button
+
+    background: #F4B608
+    box-shadow: 0 rem(5) 0 0 #BC8E0C
+    font-weight: 600
+    color: #433715
+    border: none
+    width: 100%
+    padding: 1rem 0 rem(12)
+    cursor: pointer
+    margin-bottom: rem(18)
+
+.Header-logo
+  margin: 0
+  padding: rem(15) 0
+  img
+    max-width: rem(43)
+
+h2
+  text-align: center
+
+h3
+  color: #363B47
+
+section.container
+  padding-top: rem(56)
+
+
+.Directed, .Learn, .Why, .Register
+  padding: 0 rem(20)
+  @include respond-to(large)
+  h2
+    margin-bottom: rem(40)
+    color: #363B47
+    font-size: rem(26)
+  h3
+    font-size: rem(20)
+    margin: rem(12) 0 rem(16)
+  figure
+    max-width: rem(57)
+    margin: auto
+  p
+    color: #A2A2A2
+    line-height: rem(25)
+    font-weight: 300
+    font-size: rem(15)
+  article
+    margin: rem(20) 0
+    @include respond-to(large)
+      margin: inherit
+
+.Directed
+  article
+    padding-right: rem(32)
+    margin-bottom: rem(20)
+    @include respond-to(large)
+.Learn
+  background: #F5FBFF
+  margin: rem(48) 0
+  padding: rem(48) rem(40)
+  @include respond-to(large)
+    padding: rem(48) 0
+  figure
+    margin: 0
+  article
+    padding-right: rem(32)
+    margin-bottom: rem(20)
+
+  article:last-child
+    padding-right: 0
+section.container.Why
+  padding-top: 0
+  padding-left: rem(40)
+  padding-right: rem(40)
+  @include respond-to(medium)
+    padding-top: 3.5rem
+    padding-left: 0
+    padding-right: 0
+.Why
+  padding-bottom: 2rem
+  @include respond-to(medium)
+    padding-bottom: rem(80)
+  h2
+    text-align: left
+  figure
+    max-width: inherit
+    display: none
+    @include respond-to(medium)
+     display: block
+  h3
+    margin: rem(2) 0
+  article
+    padding-right: rem(20)
+    @include respond-to(large)
+      padding-right: 0
+
+
+.Testimonials
+  background: #F5FBFF
+  padding: rem(60)
+  p
+    color: #363B47
+    line-height: rem(30)
+    max-width: rem(900)
+    margin: 3.5rem auto 0
+    text-align: justify
+  em
+    max-width: rem(900)
+    margin: rem(12) auto 3.5rem
+    text-transform: uppercase
+    font-weight: 300
+    br
+      font-weight: bold
+  ul
+    max-width: rem(900)
+    margin: auto
+  img
+    border-radius: 50%
+    box-shadow: 0 rem(10) rem(20) rem(5) rgba(0,0,0,0.20)
+
+.Register
+  .container
+    border: rem(3) solid #0A4C7D
+    border-radius: rem(6)
+    padding: rem(40)
+    max-width: rem(900)
+    margin: rem(60) auto
+  img
+    max-width: rem(25)
+    margin-right: rem(8)
+  button
+    background: #0A4C7D
+    box-shadow: 0 rem(5) 0 0 #030A0F
+    border-radius: rem(6)
+    font-size: rem(26)
+    color: #FFFFFF
+    border: none
+    margin: 0 auto rem(34)
+    width: 100%
+    display: block
+    padding: rem(14) 0 rem(6)
+    cursor: pointer
+    @include respond-to(large)
+      width: rem(300)
+  li
+    margin: rem(10) 0
+  p
+    font-weight: 400
+    color: #363B47
+    text-align: left
+
+
+.Button-fixed
+  background: #F4B608
+  box-shadow: 0 rem(5) 0 0 #BC8E0C
+  font-size: rem(24)
+  color: #433715
+  width: 100%
+  border: none
+  position: fixed
+  top: 0
+  left: 0
+  padding: rem(14) 0 rem(12)
+  text-transform: uppercase
+  font-weight: 600
+  opacity: 0
+  z-index: -1
+  transition: .5s all
+  cursor: pointer
+  &.show
+    opacity: 1
+    z-index: 2
