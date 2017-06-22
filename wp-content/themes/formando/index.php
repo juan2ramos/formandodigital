@@ -90,7 +90,7 @@
 
         <ul class="row around" id="items">
             <?php for ($i = 0; $i < count($images); $i++) :?>
-            <li data-current="<?php echo $i ?>"><img src="<?php echo $images[$i] ?>" alt=""></li>
+            <li class="<?php if ($i == 0) echo "currentLi" ?>" data-current="<?php echo $i ?>"><img src="<?php echo $images[$i] ?>" alt=""></li>
             <?php endfor; ?>
         </ul>
     </div>
@@ -113,6 +113,14 @@
     var slides = document.querySelectorAll('#slides .slide');
     var currentSlide = 0;
     var lis = document.querySelectorAll('#items li');
+    setInterval(nextSlide,5000);
+    function nextSlide(){
+        slides[currentSlide].className = 'slide';
+        lis[currentSlide].className = '';
+        currentSlide = (currentSlide+1)%slides.length;
+        slides[currentSlide].className = 'slide showing';
+        lis[currentSlide].className = 'currentLi';
+    }
 
     function slider(el) {
         this.DOM = {}
@@ -121,9 +129,12 @@
     }
     slider.prototype.initEvents = function () {
         this.DOM.el.addEventListener('click', this.clickFn.bind(this), false);
+
     }
     slider.prototype.clickFn = function () {
-        current = this.DOM.el.getAttribute('data-current')
+        var current = this.DOM.el.getAttribute('data-current')
+        lis[currentSlide].className = '';
+        this.DOM.el.className = 'currentLi';
         slides[currentSlide].className = 'slide';
         currentSlide = current;
         slides[current].className = 'slide showing';
@@ -139,7 +150,8 @@
         Button = document.querySelector('.Button-fixed')
     Form = document.querySelector('form')
     ;
-    console.log(Directed.offsetTop)
+
+
     Button.addEventListener('click', function () {
         zenscroll.toY(Form.offsetTop)
     })
