@@ -89,7 +89,7 @@ if ($_POST['_token'] == '$KJMM99osods$=)/') {
         <article class="col-9 small-16 medium-8">
             <h1>GANA DINERO CON GOOGLE ADSENSE</h1>
             <div class="Header-video">
-                <iframe width="100%" height="400" src="https://www.youtube.com/embed/DnHna33idns" frameborder="0"
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/H_G2rXyZUdo        " frameborder="0"
                         allowfullscreen></iframe>
             </div>
         </article>
