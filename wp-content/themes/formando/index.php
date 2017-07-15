@@ -108,7 +108,6 @@
     </div>
 </section>
 <button class="Button-fixed">QUÍERO QUE ME CONTACTEN</button>
-<?php print_r() ?>
 <script>
     var slides = document.querySelectorAll('#slides .slide');
     var currentSlide = 0;

@@ -72,7 +72,7 @@ if ($_POST['_token'] == '$KJMM99osods$=)/') {
     <section class="Header-bar ">
         <div class="row around container">
             <figure class="Header-logo col-8 small-4 medium-8">
-                <img src="<?php bloginfo('template_url') ?>/assets/img/logo.png" alt="logo formando digital">
+                <img style="max-width: 24px" src="<?php bloginfo('template_url') ?>/assets/img/logo-formarte.png" alt="logo formando digital">
             </figure>
             <article class="row end col-8 small-12 medium-8">
                 <div class="Header-containerNumber">
